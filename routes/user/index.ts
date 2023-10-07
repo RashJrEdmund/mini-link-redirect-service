@@ -5,6 +5,6 @@ const router = express.Router();
 
 const user_controller = new EPXRESS_USER_CONTROLLER();
 
-router.get('/', user_controller.get_one_user);
+router.get('/', user_controller.get_one_user.bind(user_controller));
 
 export default router;

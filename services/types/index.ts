@@ -1,5 +1,7 @@
+import { ObjectId } from "mongoose";
+
 export type LINK_OBJ = {
-    _id?: string;
+    _id?: ObjectId;
     user_id: string; // null for not logged in users
     short_link?: string;
     original: string;
