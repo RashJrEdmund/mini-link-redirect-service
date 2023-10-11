@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "build": "npx tsc",
-    "start": "node build/src/index.js",
+    "start": "node src/index.js",
     "dev": "nodemon src/index.ts",
     "dev:concurrently": "concurrently \"npx tsc --watch\" \"nodemon -q build/index.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
