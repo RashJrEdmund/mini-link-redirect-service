@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "build": "npx tsc",
-    "start": "node src/index.js",
+    "start": "node build/src/index.js",
     "dev": "nodemon src/index.ts",
     "dev:concurrently": "concurrently \"npx tsc --watch\" \"nodemon -q build/index.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,6 +22,7 @@
   "author": "orashus",
   "license": "ISC",
   "dependencies": {
+    "@types/mongoose": "^5.11.97",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",

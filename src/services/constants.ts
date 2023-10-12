@@ -1,6 +1,6 @@
 import { config } from "dotenv";
 
-config({ path: `${__dirname}/../../.env` }); // TODO +=> configuring .env to read hear. don't forget to update this path in the build
+config(); // TODO +=> configuring .env to read hear. don't forget to update this path in the build
 
 const MONGO_CONNECT_URL = process.env.MONGO_CONNECT_URL;
 
