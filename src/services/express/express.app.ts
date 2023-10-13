@@ -1,7 +1,6 @@
-import express, { Application, Response } from "express";
+import express, { Application } from "express";
 import cors, { CorsOptions } from "cors";
-import { url_router } from "../../routes";
-import { FRONT_END_URL } from "../constants";
+import { index_router, url_router } from "../../routes";
 
 export default async (app: Application) => {
     const cors_options: CorsOptions = {
@@ -11,10 +10,12 @@ export default async (app: Application) => {
     app.use(cors(cors_options));
     app.use(express.json());
 
-    app.use("/r", url_router);
+    app.use("vie", express.static(__dirname + "/views"));
 
-    app.get('/', (_, res: Response) => {
-        const message = `Hi there, visit ${FRONT_END_URL} to shorten your own links`;
-        res.json(message);
-    });
+    app.use(express.static(__dirname + "/../../../views/"));
+
+    // application routes
+    app.use('/', index_router);
+
+    app.use("/r", url_router);
 };
