@@ -8,6 +8,8 @@ import App from "./services/express/express.app";
     const server_message = `listening on \nhttp://localhost:${PORT}/ \n\n`
 
     App(app)
-        .then(() => app.listen(PORT, () => console.log(server_message)))
+        .then(() => app.listen(PORT, function () {
+            console.log(server_message)
+        }))
         .catch(console.log);
 })();

@@ -1,11 +1,10 @@
 import express, { Response } from "express";
+import { FRONT_END_URL } from "../../services/constants";
 
 const router = express.Router();
 
 router.get('/', (_, res: Response) => {
-    // const message = `Hi there, visit ${FRONT_END_URL} to shorten your own links`;
-    // res.json(message);
-    res.status(200).sendFile("index.html");
+    res.render("landing", { title: "Mini - Link", FRONT_END_URL });
 });
 
 export default router;
