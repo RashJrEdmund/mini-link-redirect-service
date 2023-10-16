@@ -12,8 +12,6 @@ export default async (app: Application) => {
 
     const views_root = path.join(__dirname + "/../../views");
 
-    console.log({ public_root, views_root });
-
     app.use(cors(cors_options));
     app.use(express.json());
     app.use(express.urlencoded({ extended: true })); // so for it handle form data. extended: true for it to be able to handle nested dat comming from the url;
