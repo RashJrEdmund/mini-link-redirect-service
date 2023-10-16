@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/favicon.png">
+    <link rel="stylesheet" href="/styles/error.css">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <section>
+        <h2>
+            <%= header + " " + status %>
+        </h2>
+        <p class="error_message">
+            <%= message %>
+        </p>
+        <p class="">visit <a href=<%=FRONT_END_URL %> >mini-link</a> to shorten your urls</p>
+    </section>
+</body>
+
+</html>

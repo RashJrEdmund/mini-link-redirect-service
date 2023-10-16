@@ -1,5 +1,6 @@
 import { Request, RequestHandler, Response } from "express"
 import EXPRESS_URL_SERVICE from "./url.service";
+import { FRONT_END_URL } from "../../services/constants";
 
 export default class EPXRESS_URL_CONTROLLER {
     redirect_to_url: RequestHandler = async (req: Request, res: Response) => {
@@ -12,7 +13,9 @@ export default class EPXRESS_URL_CONTROLLER {
 
             const { data, status, message } = await EXPRESS_URL_SERVICE.get_by_short_url(short_link);
 
-            if (!data || status !== 200) return res.status(status).send(message);
+            if (!data || status !== 200) {
+                return res.render("error", { title: "Mini - link", header: "Error", status, message: `${message} 😓`, FRONT_END_URL });
+            };
 
             const original = data.original as string;
 
