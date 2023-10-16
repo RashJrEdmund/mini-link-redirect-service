@@ -7,7 +7,7 @@ body {
   height: 100vh;
 }
 
-#main {
+section {
   background-color: #0b101b;
   border-radius: 10px;
   padding: 2rem 1rem;
@@ -18,12 +18,16 @@ body {
   justify-content: start;
 }
 
-h2, input {
+h2, p {
   color: #cccccc;
+}
+
+.error_message {
+  color: #e95690;
 }
 
 p a {
   color: #1d9bf0;
 }
 
-/*# sourceMappingURL=lock.css.map */
+/*# sourceMappingURL=error.css.map */
