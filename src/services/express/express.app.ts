@@ -1,6 +1,6 @@
 import express, { Application } from "express";
 import cors, { CorsOptions } from "cors";
-import { index_router, url_router } from "../../routes";
+import { fallback_router, index_router, url_router } from "../../routes";
 import path from "path";
 
 export default async (app: Application) => {
@@ -24,4 +24,6 @@ export default async (app: Application) => {
     app.use('/', index_router);
 
     app.use("/r", url_router);
+
+    app.use("/", fallback_router);
 };
